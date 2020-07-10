@@ -1,7 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
+	<title>Handy</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="Exclusive Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/styles.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/font-awesome.css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+
+    
     <!--<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>-->
@@ -58,73 +77,194 @@
         
         .chatElement {
             height: 600px;
-            width: 50%;
-            margin-left: 30rem;
+            width: 80%;
+            margin-left: 8rem;
         }
     </style>
+
+
 </head>
-
 <body>
-    <!-- We want to hide this element initially, because Web Chat isn't ready yet. -->
+		<div class="main-top">
+		 <header>
+			<div class="container-fluid px-lg-5 ">
+				<nav class="mnu mx-auto">
+						  <label for="drop" class="toggle">Menu</label>
+							<input type="checkbox" id="drop">
+							<ul class="menu">
+								<li class="mr-lg-4 mr-3 active"><a href="index.html">Handy</a></li>
+								<li class="mr-lg-4 mr-3"><a href="#services" class="scroll">Aprender</a></li>
+								 <li class="mr-lg-4 mr-3"><a href="#work" class="scroll">Equipo</a></li>
+								<li><a href="#contact" class="scroll">Contactos</a></li>
+							</ul>
+						</nav>
+			</div>
+		</header>
+		</div>
+	<section class="banner-bottom" id="about">
+		<div class="container">
+            <div class="inner-sec">
+                <div class="row middle-grids">
+                    <div class="col-lg-4 advantage-grid-info1">
+                        <div class="advantage_left1 text-center">
+                            <img src="img/lsm.jpeg" class="img-fluid" alt="">
+                        </div>
+                    </div> 
+					 <div class="col-lg-8 advantage-grid-info">
+                        <div class="advantage_left">
+                             <h1 class="heading text-capitalize mb-sm-5 mb-4">Hola. Nosotros somos <span>Handy.</span></h1>
+							<p class="mt-4">Una plataforma de <span>Aprendizaje. </span>Enfocada en la creacion de herramientas para el estudio del lenguaje de señas mexicano.</p>
+							<a href="#services" class="banner-button btn mt-5 scroll">Aprende con nosotros</a>
+						</div>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </section>
+	<div class="agileits-services" id="services">
+		<div class="container">
+            <h2 class="heading text-capitalize">Aprendiendo LSM Mano a Mano</h2>
+            <p class="subs mt-4">Enseñar, conocer y entenderse con soltura en lengua de señas es fundamental para la inclusión, pues sin ella, las personas con discapacidad auditiva pierden el acceso a la información y a la interacción diaria con amigos o seres queridos.</p>
+            <br>
+            <!-- We want to hide this element initially, because Web Chat isn't ready yet. -->
     <button type="button" class="chatLauncher" style="display:none;">
-    <div>
-      <strong>Have questions?</strong> Talk with Karen our Virtual Assistant.
+        <div>
+          <strong>Have questions?</strong> Talk with Karen our Virtual Assistant.
+        </div>
+      </button>
+        <div class="chatElement"></div>
+        <script>
+            const element = document.querySelector('.chatElement');
+            window.watsonAssistantChatOptions = {
+                integrationID: "0a38eada-11a2-4c93-bcc3-8ca1a22a4349", // The ID of this integration.
+                region: "us-south", // The region your integration is hosted in.
+                serviceInstanceID: "2d708ef7-80f9-4f12-b866-afc9f0480b60", // The ID of your service instance.
+                carbonTheme: 'g90',
+                showLauncher: false,
+    
+                // Provide the custom element.
+                element: element,
+                // Hide the close button since we want it always open.
+                hideCloseButton: true,
+                // Hide the default launcher.
+                showLauncher: false,
+                // Make the window open by default.
+                openChatByDefault: true,
+    
+                onLoad: function(instance) {
+                    // Select the button element from the page.
+                    const button = document.querySelector('.chatLauncher');
+    
+                    // Add the event listener to open your Web Chat.
+                    button.addEventListener('click', function clickListener() {
+                        instance.openWindow();
+                    });
+    
+                    instance.updateCSSVariables({
+                        'BASE-font-family': '"Times New Roman", Times, serif',
+                        '$focus': '#00ff00',
+                        '$hover-primary': '#00ff00',
+                        '$interactive-01': '#008000'
+                    });
+    
+                    // Render the Web Chat. Nothing appears on the page, because the launcher is
+                    // hidden and the Web Chat window is closed by default.
+                    instance.render().then(function() {
+                        // Now that Web Chat has been rendered (but is still closed), we make the
+                        // custom launcher button visible.
+                        //    button.style.display = 'block';
+                        //    button.classList.add('open');
+                    });
+                }
+            };
+    
+            setTimeout(function() {
+                const t = document.createElement('script');
+                t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+                document.head.appendChild(t);
+            });
+        </script>
+            
+
     </div>
-  </button>
-    <h1>Esta es una prueba del asistente virtual watson</h1>
-    <div class="chatElement"></div>
+	</div>
+	<section class="news text-center" id="work">
+		<div class="container">
+			 <h3 class="heading text-capitalize"> Nuestro Equipo </h3>
+		   <p class="subs mt-4">Entusiasmados por brindarte un excelente trabajo.</p>
+			<div class="row news-grids mt-5">
+						<div class="col-lg-4 col-md-6 newsgrid1">
+							<div class="newsgrid_tp new_grd">
+								<img src="img/pro1.jpg" alt="news image" class="img-fluid">
+									<div class="news_bt">
+                                        <h4>Adrián Rangel Suárez</h4>
+                                        <br>
+										<p class="mt-4">  IBM Students Advocates </p>
+									</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6  newsgrid2">
+							<div class="newsgrid_tp new_grd1">
+								<img src="img/pro2.jpg" alt="news image" class="img-fluid">
+								<div class="news_bt">
+									<h4>Genaro Laureano Mendez</h4>
+									<p class="mt-4">  IBM Students Advocates </p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6  newsgrid5">
+							<div class="newsgrid_tp new_grd1">
+								<img src="img/pro3.jpg" alt="news image" class="img-fluid">
+								<div class="news_bt">
+									<h4>Cristian Yavin Cortes Lugo</h4>
+									<p class="mt-4">  IBM Students Advocates </p>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+		</section>
+		<!-- //works -->
+<!-- contact -->
+	 <section class="wedo" id="contact">
+		<div class="container">
+			<h3 class="heading text-capitalize text-white text-center"> Contactanos </h3>
+		   <p class="subs mt-4 text-center">Sus comentarios atribuyen a nuestro crecimiento.</p>
+			<div class="contact_grid_right mt-5 mx-auto text-center">
+				<form action="#" method="post">
+					<div class="row contact_top">
+						<div class="col-sm-6">
+							<input type="text" name="Name" placeholder="Nombre" required="">
+						</div>
+						<div class="col-sm-6">
+							<input type="email" name="Email" placeholder="Email" required="">
+						</div>
+					</div>	
+						<input type="text" name="Name" placeholder="Nombre" required="">
+						<textarea name="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Mensage...</textarea>
+						<input type="submit" value="Enviar Mensage">
+						<input type="reset" value="Borrar Formato">
+						<div class="clearfix"> </div>
+				</form>
+			</div>
+			<div class="cpy-right text-center">
+			<div class="follow">
+				<ul class="social_section_1info">
+					<li><a href="#"><span class="fa fa-facebook"></span></a></li>
+					<li><a href="#"><span class="fa fa-twitter"></span></a></li>
+					<li><a href="#"><span class="fa fa-google"></span></a></li>
+					<li><a href="#"><span class="fa fa-dribbble"></span></a></li>
+					
+					<li><a href="#"><span class="fa fa-vimeo"></span></a></li>
+					<li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+				</ul>
+			</div>
+				<p>© 2020 Exclusive. IBM Students Advocates | Design by
+					<a href=""> Handy.</a>
+				</p>
+			</div>
+		</div>
+	</section>
 
-    <script>
-        const element = document.querySelector('.chatElement');
-        window.watsonAssistantChatOptions = {
-            integrationID: "0a38eada-11a2-4c93-bcc3-8ca1a22a4349", // The ID of this integration.
-            region: "us-south", // The region your integration is hosted in.
-            serviceInstanceID: "2d708ef7-80f9-4f12-b866-afc9f0480b60", // The ID of your service instance.
-            carbonTheme: 'g90',
-            showLauncher: false,
-
-            // Provide the custom element.
-            element: element,
-            // Hide the close button since we want it always open.
-            hideCloseButton: true,
-            // Hide the default launcher.
-            showLauncher: false,
-            // Make the window open by default.
-            openChatByDefault: true,
-
-            onLoad: function(instance) {
-                // Select the button element from the page.
-                const button = document.querySelector('.chatLauncher');
-
-                // Add the event listener to open your Web Chat.
-                button.addEventListener('click', function clickListener() {
-                    instance.openWindow();
-                });
-
-                instance.updateCSSVariables({
-                    'BASE-font-family': '"Times New Roman", Times, serif',
-                    '$focus': '#00ff00',
-                    '$hover-primary': '#00ff00',
-                    '$interactive-01': '#008000'
-                });
-
-                // Render the Web Chat. Nothing appears on the page, because the launcher is
-                // hidden and the Web Chat window is closed by default.
-                instance.render().then(function() {
-                    // Now that Web Chat has been rendered (but is still closed), we make the
-                    // custom launcher button visible.
-                    //    button.style.display = 'block';
-                    //    button.classList.add('open');
-                });
-            }
-        };
-
-        setTimeout(function() {
-            const t = document.createElement('script');
-            t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
-            document.head.appendChild(t);
-        });
-    </script>
 </body>
-
 </html>
