@@ -84,8 +84,8 @@ app.get('/', (req, res) => res.render('index'));
 var x;
 var palabra = '';
 
-app.post('/', upload2.single('myImage'), (req, res) => {
-    upload(req, res, (err) => {
+app.post('/limpiar', upload2.single('myImage'), (req, res) => {
+    /*upload(req, res, (err) => {
         if (err) {
             res.render('index', {
                 msg: err
@@ -93,7 +93,8 @@ app.post('/', upload2.single('myImage'), (req, res) => {
         } else {
             res.render('index', {});
         }
-    });
+    });*/
+    palabra = '';
 });
 
 //CUANDO SE HAGA UNA PETICÓN A UPLOAD

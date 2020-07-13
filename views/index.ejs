@@ -252,7 +252,7 @@
         <!--aqui define un parrado que si esta definido pone el dato, sino deja bacio-->
 
         <p>
-            <%= typeof data != 'undefined' ? data : '' %>
+            <!--<%= typeof data != 'undefined' ? data : '' %>-->
         </p>
 
         <!--aqui se comienza a crear una tabla-->
@@ -296,10 +296,10 @@
         </h2>
 
 
-        <form action="/upload" method="POST" enctype="multipart/form-data" class="center">
+        <form action="/limpiar" method="POST" enctype="multipart/form-data" class="center" id="formularioLimpiar">
 
             <!--<button action="/" method="POST" type="submit" class="btn deep-purple accent-3" id="sb">Limpiar</button>-->
-            <button type="submit" class="btn" formaction="/" id="sdb">Limpiar</button>
+            <button type="submit" id="sbl">Limpiar</button>
         </form>
 
     </div>
@@ -319,13 +319,18 @@
 
                 <div class="audio">
 
-                    <audio uploader controls="controls" id="audio">
-                     <!--   <source type="audio/ogg" src="/audio.ogg">-->
-                        <source id="source" type="audio/wav" src="<%= typeof file != 'undefined' ? file : 'music/audio.wav' %>">
-                          <!--  <source id="source" type="audio/wav">  <!--src="music/audio.wav">-->
-                        Your browser does not support the audio element.
-               <!-- <source src="<%= typeof audio %>"/>-->
-              </audio>
+                    <audio src="music/audioH.wav" uploader controls="controls" id="audio">
+                        <p>Tu navegador no implementa el elemento audio.</p>
+                        </audio>
+
+                    <!--<audio uploader controls="controls" id="audio">-->
+                    <!--   <source type="audio/ogg" src="/audio.ogg">-->
+                    <!--<source id="source" type="audio/wav" src="<%= typeof file != 'undefined' ? file : 'music/audio.wav' %>">-->
+                    <!--  <source id="source" type="audio/wav">  <!--src="music/audio.wav">-->
+                    <!-- Your browser does not support the audio element.-->
+                    <!--  </audio>-->
+
+
                     <p id="source2"></p>
 
                 </div>
